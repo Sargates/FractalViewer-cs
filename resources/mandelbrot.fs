@@ -26,14 +26,12 @@ void main() {
 	colors[5] = vec4(0, 0, 1, 1);
 	colors[6] = vec4(1, 0, 1, 1);
 
-	vec2 temp = 2.0*fragTexCoord-1.0;
-
 
 	vec2 worldPos = (inverse(worldToLocal) * vec4(fragTexCoord*(screenSize/2), 0, 0)).xy;
 
 
 	vec2 uv = worldPos*zoom; // Multiply by zoom so that things don't get translated why zoom (not exactly sure why this is required)
-	vec2 c = uv.xy;
+	vec2 c = 7*uv.xy;
 	c /= vec2(800.0, 800.0); // Divide out to scale uv coord up to reasonable scale (vector components are pixel 1:1)
 	// 800 is hardcoded in the program as well so don't change it here
 	vec2 z = vec2(0.0, 0.0);
