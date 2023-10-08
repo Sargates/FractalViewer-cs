@@ -42,7 +42,8 @@ void main() {
 		if(dot(z, z) > 4.0) {
 			break;
 		}
-		z = complexMultiply(z, z) + c;
+		vec2 absZ = vec2(abs(z.x), abs(z.y));
+		z = complexMultiply(absZ, absZ) + c;
 	}
 
 	if(i == maxIterations) {
